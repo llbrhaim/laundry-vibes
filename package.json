@@ -1,0 +1,15 @@
+{
+  "name": "laundry-vibes",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Laundry Vibes website: React frontend + Express/MongoDB backend in one deployable app",
+  "scripts": {
+    "build": "npm --prefix backend install && npm --prefix frontend install --include=dev && npm --prefix frontend run build",
+    "start": "npm --prefix backend start",
+    "dev:api": "npm --prefix backend run dev",
+    "dev:web": "npm --prefix frontend run dev"
+  },
+  "engines": {
+    "node": ">=20.19"
+  }
+}
