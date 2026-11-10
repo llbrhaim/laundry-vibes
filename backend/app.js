@@ -87,8 +87,8 @@ function createApp({
       rolling: true,
       cookie: {
         httpOnly: true,
-        sameSite: "lax",
-        secure: "auto", // secure cookie automatically when served over HTTPS
+        sameSite: "none",
+        secure: true,
         maxAge: SESSION_HOURS * 60 * 60 * 1000,
       },
     }),
