@@ -14,11 +14,14 @@ export async function api(path, options = {}) {
     )
   )
     headers["X-CSRF-Token"] = csrfToken;
-  const response = await fetch(`/api${path}`, {
-    credentials: "include",
-    ...options,
-    headers,
-  });
+  const response = await fetch(
+    `https://laundry-vibes.onrender.com/api${path}`,
+    {
+      credentials: "include",
+      ...options,
+      headers,
+    },
+  );
   if (response.status === 204) return null;
   const data = await response.json().catch(() => ({}));
   if (!response.ok) throw new Error(data.error || "Request failed.");
