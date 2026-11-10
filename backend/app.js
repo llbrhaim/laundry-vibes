@@ -5,7 +5,7 @@ const express = require("express");
 const helmet = require("helmet");
 const session = require("express-session");
 const rateLimit = require("express-rate-limit");
-
+const cors = require("cors");
 const publicRoutes = require("./routes/public");
 const adminRoutes = require("./routes/admin");
 
@@ -23,6 +23,12 @@ function createApp({
   frontendDist,
 }) {
   const app = express();
+  app.use(
+    cors({
+      origin: ["https://laundryvibes.com", "https://www.laundryvibes.com"],
+      credentials: true,
+    }),
+  );
 
   // Hosting platforms (Render, Railway, etc.) sit behind a proxy
   app.set("trust proxy", 1);
