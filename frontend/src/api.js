@@ -15,7 +15,7 @@ export async function api(path, options = {}) {
   )
     headers["X-CSRF-Token"] = csrfToken;
   const response = await fetch(
-    `https://laundry-vibes.onrender.com/api${path}`,
+    `https://api.laundryvibes.com/api${path}`,
     {
       credentials: "include",
       ...options,
